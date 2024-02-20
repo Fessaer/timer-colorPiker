@@ -44,7 +44,6 @@ List of the main technologies and frameworks used in the project.
 - [TypeScript](https://www.typescriptlang.org/)
 - [Redux](https://redux.js.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org)
-- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
 - [MUI (Material UI)](https://mui.com/)
 
 ## Dev
@@ -55,12 +54,6 @@ Required:
 
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-Recommended:
-
-- [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
-- [GraphQL](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql)
-- [yarn](https://marketplace.visualstudio.com/items?itemName=gamunu.vscode-yarn)
 
 ## Local build
 
@@ -74,7 +67,7 @@ Instructions on how to run the application in a local development environment.
 
 1. Clone the repository
    ```sh
-   git clone https://github.com/MeiFagundes/React-TypeScript-RTK-Template.git
+   git clone https://github.com/Fessaer/timer-colorPiker.git
    ```
 2. Install the dependencies
    ```sh
