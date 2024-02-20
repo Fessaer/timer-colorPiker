@@ -1,0 +1,9 @@
+export const PRIMARY_COLOR = '#656D75';
+export const SECONDARY_COLOR = '#D31245';
+export const TIME_SUGGESTION_COLOR = '#00CE0E';
+export const LIGHT_GRAY1 = '#8CA0B3';
+export const LIGHT_GRAY2 = '#C0C6D6';
+export const LIGHT_GRAY3 = '#61688B';
+export const LIGHT_GRAY4 = '#D8D8D8';
+export const LIGHT_GRAY5 = '#EDEDED';
+export const BACKGROUND_COLOR = '#FFFFFF';
