@@ -2,6 +2,10 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Piker from '../Piker/Piker';
+import { useAppDispatch } from '../../../../../shared/lib/hooks/useAppDispatch';
+import { IColor, colorActions } from '../../../model';
+import { defaultColor } from '../../const';
+import { useCallback, useState } from 'react';
 
 const style = {
   width: 400,
@@ -12,9 +16,24 @@ const style = {
 };
 
 const ModalPiker: React.FC = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const [color, setColor] = useState<IColor>(defaultColor);
+
+  const dispatch = useAppDispatch();
+
+  const handleChange = useCallback(({ colors }) => {
+    setColor({ ...colors.rgba });
+  }, []);
+
+  const handleOpen = () => {
+    dispatch(colorActions.addColor(color));
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    dispatch(colorActions.addColor(color));
+  };
 
   return (
     <div>
@@ -28,7 +47,7 @@ const ModalPiker: React.FC = () => {
         aria-describedby="modal-modal-description"
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
-        <Piker />
+        <Piker onChange={handleChange} />
       </Modal>
     </div>
   );

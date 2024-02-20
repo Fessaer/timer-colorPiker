@@ -12,7 +12,7 @@ const Router: React.FC = () => {
           Таймер
         </NavLink>
         <NavLink to="/colorPiker" activeClassName="active">
-          Выбор цвета
+          Палитра
         </NavLink>
       </Stack>
       <Switch>

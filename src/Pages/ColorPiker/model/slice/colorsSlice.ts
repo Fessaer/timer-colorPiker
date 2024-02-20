@@ -8,7 +8,7 @@ export interface IColor {
   a: number;
 }
 
-const initialState: IColor[] = [{ r: 60, g: 70, b: 30, a: 1 }];
+const initialState: IColor[] = [];
 
 const colorsSlice = createSlice({
   name: 'colors',
