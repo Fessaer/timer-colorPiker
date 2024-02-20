@@ -3,9 +3,10 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Piker from '../Piker/Piker';
 import { useAppDispatch } from '../../../../../shared/lib/hooks/useAppDispatch';
-import { IColor, colorActions } from '../../../model';
+import { IColor, colorActions, getColorsSelector } from '../../../model';
 import { defaultColor } from '../../const';
 import { useCallback, useState } from 'react';
+import { useAppSelector } from '../../../../../shared/lib/hooks/useAppSelector';
 
 const style = {
   width: 400,
@@ -18,6 +19,7 @@ const style = {
 const ModalPiker: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [color, setColor] = useState<IColor>(defaultColor);
+  const colors = useAppSelector(getColorsSelector);
 
   const dispatch = useAppDispatch();
 
@@ -26,7 +28,9 @@ const ModalPiker: React.FC = () => {
   }, []);
 
   const handleOpen = () => {
-    dispatch(colorActions.addColor(color));
+    if (!colors.length) {
+      dispatch(colorActions.addColor(color));
+    }
     setOpen(true);
   };
 
